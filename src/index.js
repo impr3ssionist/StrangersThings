@@ -1,27 +1,26 @@
 import React from "react";
 import ReactDOM from "react-dom";
-// import { BrowserRouter as Router, Route } from "react-router-dom";
-import { Register } from "./components";
-// import App from "./App";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import { AccountForm } from "./components";
 
 const App = () => {
-  // const BASE_URL =
-  //   "https://strangers-things.herokuapp.com/api/2108-LSU-RM-WEB-PT";
-
-  // const [posts, setPosts] = useState([]);
-
-  // useEffect(async () => {
-  //   const thePosts = await fetchPosts();
-  //   console.log("this is the posts var", thePosts);
-  // });
-
   return (
-    <div>
-      <div className="app-page-view">
-        <p>PlaceHolder</p>
-      </div>
-    </div>
+    <>
+      <h1>Stranger's Things</h1>
+
+      <Route path="/register">
+        <AccountForm action="register" />
+      </Route>
+      <Route path="/login">
+        <AccountForm action="login" />
+      </Route>
+    </>
   );
 };
 
-ReactDOM.render(<App />, document.getElementById("app"));
+ReactDOM.render(
+  <Router>
+    <App />
+  </Router>,
+  document.getElementById("app")
+);
