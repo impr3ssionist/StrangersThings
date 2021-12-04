@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const API_ROOT = `https://strangers-things.herokuapp.com/api/2108-LSU-RM-WEB-PT/users/`;
 const API_REGISTER = `${API_ROOT}register`;
@@ -9,6 +10,8 @@ const AccountForm = ({ action }) => {
   const [password, setPassword] = useState("");
   const isLogin = action === "login";
   const title = isLogin ? "Login" : "Register";
+  const oppositeTitle = isLogin ? "Register" : "Login";
+  const oppositeAction = isLogin ? "Register" : "Login";
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -55,6 +58,7 @@ const AccountForm = ({ action }) => {
         ></input>
         <button type="submit">Register</button>
       </form>
+      <Link to="/">Go somewhere</Link>
     </>
   );
 };
