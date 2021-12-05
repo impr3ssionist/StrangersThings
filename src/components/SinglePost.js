@@ -3,8 +3,8 @@ import { useParams } from "react-router-dom";
 
 const SinglePost = ({ posts }) => {
   const { postId } = useParams();
-  console.log("Post ID", postId);
-  console.log("Single Posts", posts);
+  const post = posts.find((post) => postId === post._id);
+  console.log("SINGLE POST", post);
   return <>Single Post!</>;
 };
 

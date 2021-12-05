@@ -50,7 +50,7 @@ const App = () => {
         <Posts posts={posts} />
       </Route>
       <Route path="/posts/:postId">
-        <SinglePost post={posts} />
+        <SinglePost posts={posts} />
       </Route>
       <Route path="/register">
         <AccountForm
