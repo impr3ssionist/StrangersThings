@@ -5,15 +5,24 @@ import { AccountForm } from "./components";
 
 const App = () => {
   const [token, setToken] = useState("");
+  const [userData, setUserData] = useState({});
   return (
     <>
       <h1>Stranger's Things</h1>
 
       <Route path="/register">
-        <AccountForm action="register" setToken={setToken} />
+        <AccountForm
+          action="register"
+          setToken={setToken}
+          setUserData={setUserData}
+        />
       </Route>
       <Route path="/login">
-        <AccountForm action="login" setToken={setToken} />
+        <AccountForm
+          action="login"
+          setToken={setToken}
+          setUserData={setUserData}
+        />
       </Route>
     </>
   );
