@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import { AccountForm, Posts, SinglePost } from "./components";
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import { AccountForm, Posts, SinglePost, NewPostForm, Nav } from "./components";
 import { callApi } from "./api";
 
 const App = () => {
@@ -27,11 +27,10 @@ const App = () => {
   };
 
   useEffect(async () => {
-    const posts = await fetchPosts();
-    setPosts(posts);
-
+    // const posts = await fetchPosts();
+    // setPosts(posts);
     if (!token) {
-      localStorage.getItem("token");
+      setToken(localStorage.getItem("token"));
       return;
     }
     const data = await fetchUserData(token);
@@ -40,32 +39,58 @@ const App = () => {
     }
   }, [token]);
 
-  console.log("POSTS", posts);
+  useEffect(async () => {
+    const posts = await fetchPosts();
+    setPosts(posts);
+  }, []);
 
   return (
     <>
-      <h1>Stranger's Things</h1>
-      {userData.username && <div>Hello {userData.username}</div>}
-      <Route exact path="/posts">
-        <Posts posts={posts} />
-      </Route>
-      <Route path="/posts/:postId">
-        <SinglePost posts={posts} />
-      </Route>
-      <Route path="/register">
-        <AccountForm
-          action="register"
-          setToken={setToken}
-          setUserData={setUserData}
-        />
-      </Route>
-      <Route path="/login">
-        <AccountForm
-          action="login"
-          setToken={setToken}
-          setUserData={setUserData}
-        />
-      </Route>
+      {userData.username && (
+        <h1>Welcome back to Stranger's Things {userData.username}</h1>
+      )}
+      {!userData.username && <h1>Welcome to Stranger's Things</h1>}
+      <Nav />
+
+      <Switch>
+        <Route exact path="/"></Route>
+        <Route exact path="/posts">
+          <Posts posts={posts} />
+        </Route>
+        <Route path="/posts/new">
+          <NewPostForm
+            token={token}
+            setPosts={setPosts}
+            posts={posts}
+            action="add"
+          />
+        </Route>
+        <Route path="/posts/:postId/edit">
+          <NewPostForm
+            token={token}
+            setPosts={setPosts}
+            posts={posts}
+            action="edit"
+          />
+        </Route>
+        <Route path="/posts/:postId">
+          <SinglePost posts={posts} />
+        </Route>
+        <Route path="/register">
+          <AccountForm
+            action="register"
+            setToken={setToken}
+            setUserData={setUserData}
+          />
+        </Route>
+        <Route path="/login">
+          <AccountForm
+            action="login"
+            setToken={setToken}
+            setUserData={setUserData}
+          />
+        </Route>
+      </Switch>
     </>
   );
 };

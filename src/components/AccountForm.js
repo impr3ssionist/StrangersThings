@@ -25,7 +25,6 @@ const AccountForm = ({ action, setToken, setUserData }) => {
       method: "POST",
     });
     const token = data?.data?.token;
-    console.log("token in account", token);
     if (token) {
       localStorage.setItem("token", token);
       setUsername("");
@@ -35,7 +34,7 @@ const AccountForm = ({ action, setToken, setUserData }) => {
     }
   };
   return (
-    <>
+    <div id="register-fields">
       <h4>Register</h4>
       <form onSubmit={handleSubmit}>
         <input
@@ -53,7 +52,7 @@ const AccountForm = ({ action, setToken, setUserData }) => {
         <button type="submit">Register</button>
       </form>
       <Link to="/">Go somewhere</Link>
-    </>
+    </div>
   );
 };
 
