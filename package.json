@@ -1,10 +1,12 @@
 {
   "name": "strangersthings",
   "version": "1.0.0",
-  "description": "",
+  "description": "This is confirmation that things are working",
   "main": "./source/index.js",
   "scripts": {
-    "start": "react-scripts start"
+    "start": "react-scripts start",
+    "build": "webpack",
+    "build-watch": "webpack -w"
   },
   "keywords": [],
   "author": "",
@@ -28,5 +30,15 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "webpack-cli": "^4.9.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/impr3ssionist/StrangersThings.git"
+  },
+  "bugs": {
+    "url": "https://github.com/impr3ssionist/StrangersThings/issues"
   }
 }

@@ -1,7 +1,14 @@
 import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
-import { AccountForm, Posts, SinglePost, NewPostForm, Nav } from "./components";
+import {
+  AccountForm,
+  Posts,
+  SinglePost,
+  NewPostForm,
+  Nav,
+  Login,
+} from "./components";
 import { callApi } from "./api";
 
 const App = () => {
@@ -54,6 +61,9 @@ const App = () => {
 
       <Switch>
         <Route exact path="/"></Route>
+        <Route path="/login">
+          <Login />
+        </Route>
         <Route exact path="/posts">
           <Posts posts={posts} />
         </Route>
