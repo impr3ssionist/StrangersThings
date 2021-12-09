@@ -16,27 +16,35 @@ const Nav = () => {
     <div id="nav-bar">
       <div id="nav-links">
         <Link to="/posts">View Posts from Strangers!</Link>
-        {isLoggedIn ? (
-          <Link
-            to="/"
-            onClick={() => {
-              localStorage.removeItem("token");
-              setIsLoggedIn(false);
-            }}
-          >
-            Logout
-          </Link>
-        ) : (
-          <div>
-            <Link to="/login">Login</Link>
-            <Link to="/register">Register</Link>
-          </div>
-        )}
+        <div>
+          {isLoggedIn ? (
+            <li>
+              <Link
+                to="/"
+                onClick={() => {
+                  localStorage.removeItem("token");
+                  setIsLoggedIn(false);
+                }}
+              >
+                Logout
+              </Link>
+            </li>
+          ) : (
+            <div>
+              <li>
+                <Link to="/login">Login</Link>
+                <Link to="/register">Register</Link>
+              </li>
+            </div>
+          )}
+        </div>
 
         <Link to="/posts/new">Add a Post</Link>
       </div>
     </div>
   );
+
+  console.log(isLoggedIn);
 };
 
 export default Nav;

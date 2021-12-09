@@ -23,11 +23,14 @@ const Login = () => {
       }),
     });
 
-    const {
-      data: { token },
-    } = await response.json();
-
-    localStorage.setItem("token", token);
+    if (response) {
+      const {
+        data: { token },
+      } = await response.json();
+      localStorage.setItem("token", token);
+      setUsername("");
+      setPassword("");
+    }
 
     setUsername("");
     setPassword("");
