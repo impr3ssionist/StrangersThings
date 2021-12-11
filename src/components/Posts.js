@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router";
+import { SinglePost } from "./SinglePost";
+import { callApi } from "../api";
+
+const method = "DELETE";
 
 const postMatches = (post, searchTerm) => {
   const searchTermLower = searchTerm.toLowerCase();
@@ -20,11 +24,28 @@ const postMatches = (post, searchTerm) => {
   }
 };
 
-const Posts = ({ posts }) => {
+const Posts = ({ posts, token, setPosts, userData }) => {
   const history = useHistory();
   const [searchTerm, setSearchTerm] = useState("");
 
   const postsToDisplay = posts.filter((post) => postMatches(post, searchTerm));
+
+  const handleSubmit = async (postId) => {
+    const API_URL = `/posts/${postId}`;
+    event.preventDefault();
+    try {
+      await callApi({
+        url: API_URL,
+        method: method,
+        token: token,
+      });
+      const remainingPosts = posts.filter((post) => post._id !== postId);
+      setPosts(remainingPosts);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <>
       <div id="posts-nav">
@@ -48,6 +69,11 @@ const Posts = ({ posts }) => {
             <button onClick={() => history.push(`/posts/${post._id}`)}>
               Tell me more!
             </button>
+            {post.author.username === userData.username ? (
+              <button onClick={() => handleSubmit(post._id)}>
+                Delete Post
+              </button>
+            ) : null}
           </div>
         ))
       ) : (

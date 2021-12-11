@@ -50,6 +50,7 @@ const App = () => {
     const posts = await fetchPosts();
     setPosts(posts);
   }, []);
+  console.log("UserData:", userData);
 
   return (
     <>
@@ -65,7 +66,12 @@ const App = () => {
           <Login />
         </Route>
         <Route exact path="/posts">
-          <Posts posts={posts} />
+          <Posts
+            posts={posts}
+            token={token}
+            setPosts={setPosts}
+            userData={userData}
+          />
         </Route>
         <Route path="/posts/new">
           <NewPostForm
