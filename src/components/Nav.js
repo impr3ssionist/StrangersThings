@@ -19,6 +19,8 @@ const Nav = () => {
         <div>
           {isLoggedIn ? (
             <li>
+              <Link to="/posts/new">Add a Post</Link>
+              <Link to="/profile">Profile</Link>
               <Link
                 to="/"
                 onClick={() => {
@@ -38,8 +40,6 @@ const Nav = () => {
             </div>
           )}
         </div>
-
-        <Link to="/posts/new">Add a Post</Link>
       </div>
     </div>
   );

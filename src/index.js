@@ -8,6 +8,7 @@ import {
   NewPostForm,
   Nav,
   Login,
+  Profile,
 } from "./components";
 import { callApi } from "./api";
 
@@ -72,6 +73,9 @@ const App = () => {
             setPosts={setPosts}
             userData={userData}
           />
+        </Route>
+        <Route path="/profile">
+          <Profile userData={userData} />
         </Route>
         <Route path="/posts/new">
           <NewPostForm
