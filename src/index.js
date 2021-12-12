@@ -11,6 +11,7 @@ import {
   Profile,
 } from "./components";
 import { callApi } from "./api";
+import "../src/style.css";
 
 const App = () => {
   const [token, setToken] = useState("");
@@ -55,10 +56,12 @@ const App = () => {
 
   return (
     <>
-      {userData.username && (
-        <h1>Welcome back to Stranger's Things {userData.username}</h1>
-      )}
-      {!userData.username && <h1>Welcome to Stranger's Things</h1>}
+      <div id="header">
+        {userData.username && (
+          <p>Welcome back to Stranger's Things {userData.username}</p>
+        )}
+        {!userData.username && <p>Welcome to Stranger's Things</p>}
+      </div>
       <Nav />
 
       <Switch>

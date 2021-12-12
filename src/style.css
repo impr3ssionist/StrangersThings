@@ -1,0 +1,38 @@
+body {
+  font-family: "Playfair Display", serif;
+  font-family: "Source Code Pro", monospace;
+}
+#header {
+  height: 5vh;
+  color: green;
+  padding-top: -5px;
+}
+#nav-links {
+  background-color: black;
+  display: flex;
+  flex-direction: row;
+  color: whitesmoke;
+}
+
+span a {
+  padding: 0px 10px 0px 10px;
+  font-size: 15px;
+}
+
+a {
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+a:hover {
+  background-color: green;
+}
+
+#nav-logo {
+  background-color: red;
+  width: 50px;
+}
+
+p {
+  height: 4px;
+}

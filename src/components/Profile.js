@@ -27,7 +27,7 @@ const Profile = ({ userData }) => {
       {userData.messages === [] ? (
         <h3>Inbox {userData.messages}</h3>
       ) : (
-        <h3>No messages to display</h3>
+        <h3>There are no messages to display</h3>
       )}
     </div>
   );
