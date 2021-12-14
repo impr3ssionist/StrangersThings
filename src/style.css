@@ -36,3 +36,51 @@ a:hover {
 p {
   height: 4px;
 }
+
+.post-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#seller,
+.location {
+  font-size: 10px;
+}
+
+.post-info {
+  padding: 0px 0px 4px 4px;
+  margin: 5px;
+  box-shadow: 0px 8px;
+}
+
+#title-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+button {
+  background-color: green;
+  color: white;
+}
+
+#posts-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+input {
+  height: 20px;
+  font-family: "Playfair Display", serif;
+  font-family: "Source Code Pro", monospace;
+}
+
+#posts {
+  color: green;
+}
+
+.description {
+  font-size: 15px;
+}

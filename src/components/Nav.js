@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-const Nav = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(null);
+const Nav = ({ token }) => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
     if (localStorage.getItem("token")) {
@@ -10,7 +10,7 @@ const Nav = () => {
     } else {
       setIsLoggedIn(false);
     }
-  }, []);
+  }, [token]);
 
   return (
     <div id="nav-bar">

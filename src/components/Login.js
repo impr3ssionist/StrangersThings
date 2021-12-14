@@ -25,7 +25,8 @@ const Login = () => {
 
     if (response) {
       const data = await response.json();
-      console.log(data);
+      const token = data.data.token;
+      setTok
       localStorage.setItem("token", token);
       setUsername("");
       setPassword("");
@@ -43,6 +44,7 @@ const Login = () => {
           value={username}
           placeholder="Enter Username"
           onChange={(event) => setUsername(event.target.value)}
+          
         ></input>
 
         <label>Password</label>

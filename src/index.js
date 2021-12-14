@@ -62,13 +62,11 @@ const App = () => {
         )}
         {!userData.username && <p>Welcome to Stranger's Things</p>}
       </div>
-      <Nav />
+      <Nav token={token} />
 
       <Switch>
         <Route exact path="/"></Route>
-        <Route path="/login">
-          <Login />
-        </Route>
+
         <Route exact path="/posts">
           <Posts
             posts={posts}
@@ -78,7 +76,7 @@ const App = () => {
           />
         </Route>
         <Route path="/profile">
-          <Profile userData={userData} />
+          <Profile userData={userData} token={token} />
         </Route>
         <Route path="/posts/new">
           <NewPostForm

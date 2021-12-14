@@ -7,11 +7,11 @@ const SinglePost = ({ posts }) => {
   return (
     <div id="single-post">
       {post ? (
-        <div>
-          <h3>{post.title}</h3>
-          <p>Posted by: {post.author.username}</p>
-          <p>Price: {post.price}</p>
-          <p>Location: {post.location}</p>
+        <div class="post-info">
+          <h3 class="post-title">{post.title}</h3>
+          <p id="seller">Seller: {post.author.username}</p>
+          <p class="location">Location: {post.location}</p>
+          <p class="description">Price: {post.price}</p>
           <p>Delivers: {post.willDeliver ? "Yes" : "No"}</p>
           <Link to="/posts/{post._id}/edit">Edit This Post</Link>
         </div>

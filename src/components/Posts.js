@@ -49,7 +49,7 @@ const Posts = ({ posts, token, setPosts, userData }) => {
   return (
     <>
       <div id="posts-nav">
-        <h2>Posts</h2>
+        <h2 id="posts">Posts</h2>
         <input
           type="text"
           placeholder="Search Posts"
@@ -61,14 +61,21 @@ const Posts = ({ posts, token, setPosts, userData }) => {
       </div>
       {postsToDisplay.length ? (
         postsToDisplay.map((post) => (
-          <div key={post._id} style={{ border: "1px solid black" }}>
-            <h5>{post.title}</h5>
-            <div>Posted by: {post.author.username}</div>
-            <div>Description: {post.description}</div>
-            <div>Location: {post.location}</div>
-            <button onClick={() => history.push(`/posts/${post._id}`)}>
-              Tell me more!
-            </button>
+          <div
+            class="post-info"
+            key={post._id}
+            style={{ border: "2px solid black" }}
+          >
+            <div id="title-button">
+              <span class="post-title">{post.title}</span>
+              <button onClick={() => history.push(`/posts/${post._id}`)}>
+                Tell me more!
+              </button>
+            </div>
+            <div id="seller">Seller: {post.author.username}</div>
+            <div class="location">Location: {post.location}</div>
+            <div class="description">Description: {post.description}</div>
+
             {post.author.username === userData.username ? (
               <button onClick={() => handleSubmit(post._id)}>
                 Delete Post
