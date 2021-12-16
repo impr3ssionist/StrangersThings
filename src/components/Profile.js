@@ -40,7 +40,9 @@ const Profile = ({ userData, token }) => {
 
   return (
     <div>
-      <h1>This is where your information lives, {userData.username}</h1>
+      <h1 class="page-title">
+        This is where your information lives, {userData.username}
+      </h1>
       {posts && posts.length ? (
         <h2>
           Listings you've created:{" "}

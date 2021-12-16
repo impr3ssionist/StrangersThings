@@ -49,7 +49,7 @@ const Posts = ({ posts, token, setPosts, userData }) => {
   return (
     <>
       <div id="posts-nav">
-        <h2 id="posts">Posts</h2>
+        <h2 class="page-title">Posts</h2>
         <input
           type="text"
           placeholder="Search Posts"

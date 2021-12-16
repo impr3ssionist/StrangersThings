@@ -64,7 +64,7 @@ const NewPostForm = ({ token, setPosts, posts, action }) => {
   return (
     <>
       <h2>{title}</h2>
-      <form onSubmit={handleSubmit}>
+      <form id="new-post-form" onSubmit={handleSubmit}>
         <input
           type="text"
           placeholder="What are you selling?"

@@ -37,7 +37,8 @@ p {
   height: 4px;
 }
 
-.post-title {
+.post-title,
+h2 {
   font-size: 20px;
   font-weight: bold;
 }
@@ -62,6 +63,9 @@ p {
 button {
   background-color: green;
   color: white;
+  margin-top: 1px;
+  font-family: "Playfair Display", serif;
+  font-family: "Source Code Pro", monospace;
 }
 
 #posts-nav {
@@ -77,10 +81,14 @@ input {
   font-family: "Source Code Pro", monospace;
 }
 
-#posts {
-  color: green;
-}
-
 .description {
   font-size: 15px;
+}
+
+#new-post-form {
+  background-color: brown;
+}
+
+.page-title {
+  color: green;
 }
