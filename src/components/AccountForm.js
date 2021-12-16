@@ -35,7 +35,7 @@ const AccountForm = ({ action, setToken, setUserData }) => {
   };
   return (
     <div id="register-fields">
-      <h4 class="page-title">{title}</h4>
+      <h4 className="page-title">{title}</h4>
       <form onSubmit={handleSubmit}>
         <input
           type="text"

@@ -49,7 +49,7 @@ const Posts = ({ posts, token, setPosts, userData }) => {
   return (
     <>
       <div id="posts-nav">
-        <h2 class="page-title">Posts</h2>
+        <h2 className="page-title">Posts</h2>
         <input
           type="text"
           placeholder="Search Posts"
@@ -62,19 +62,19 @@ const Posts = ({ posts, token, setPosts, userData }) => {
       {postsToDisplay.length ? (
         postsToDisplay.map((post) => (
           <div
-            class="post-info"
+            className="post-info"
             key={post._id}
             style={{ border: "2px solid black" }}
           >
             <div id="title-button">
-              <span class="post-title">{post.title}</span>
+              <span className="post-title">{post.title}</span>
               <button onClick={() => history.push(`/posts/${post._id}`)}>
                 Tell me more!
               </button>
             </div>
             <div id="seller">Seller: {post.author.username}</div>
-            <div class="location">Location: {post.location}</div>
-            <div class="description">Description: {post.description}</div>
+            <div className="location">Location: {post.location}</div>
+            <div className="description">Description: {post.description}</div>
 
             {post.author.username === userData.username ? (
               <button onClick={() => handleSubmit(post._id)}>

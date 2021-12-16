@@ -86,9 +86,45 @@ input {
 }
 
 #new-post-form {
-  background-color: brown;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
 }
 
 .page-title {
   color: green;
+}
+
+#inbox {
+}
+
+#message {
+  height: 50%;
+}
+
+#message-content {
+  height: max-content;
+  background-color: #5bc236;
+  border-radius: 15px;
+  width: fit-content;
+}
+
+#sender {
+  background-color: black;
+  color: whitesmoke;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 25vw;
+  border-radius: 100px;
+}
+
+#inbox-span {
+  background-color: gray;
+  float: left;
+}
+
+#user-posts {
+  float: right;
 }

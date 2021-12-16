@@ -95,7 +95,7 @@ const App = () => {
           />
         </Route>
         <Route path="/posts/:postId">
-          <SinglePost posts={posts} />
+          <SinglePost posts={posts} token={token} />
         </Route>
         <Route path="/register">
           <AccountForm

@@ -37,15 +37,34 @@ const Profile = ({ userData, token }) => {
 
   console.log("DATA", userData);
   console.log("POSTS", userData.posts);
+  console.log("UserData:", userData);
 
   return (
     <div>
-      <h1 class="page-title">
+      <h1 className="page-title">
         This is where your information lives, {userData.username}
       </h1>
+      {userData.messages && userData.messages.length ? (
+        <div>
+          <div id="inbox-span">
+            <h3 id="inbox">Inbox ({userData.messages.length})</h3>
+
+            {userData.messages.map((message) => {
+              return (
+                <div id="message" key={message._id}>
+                  <label id="sender">{message.fromUser.username}</label>
+                  <p id="message-content">{message.content}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      ) : (
+        <h3>There are no messages to display</h3>
+      )}
       {posts && posts.length ? (
-        <h2>
-          Listings you've created:{" "}
+        <div id="user-posts">
+          <h2>Listings you've created: </h2>
           {posts.map((post) => {
             return (
               <div key={post._id} style={{ border: "1px solid black" }}>
@@ -59,15 +78,9 @@ const Profile = ({ userData, token }) => {
               </div>
             );
           })}
-        </h2>
+        </div>
       ) : (
         <h2>You haven't created any posts yet.</h2>
-      )}
-
-      {userData.messages === [] ? (
-        <h3>Inbox {userData.messages}</h3>
-      ) : (
-        <h3>There are no messages to display</h3>
       )}
     </div>
   );
