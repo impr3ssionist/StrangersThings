@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 
 const BASE_URL =
   "https://strangers-things.herokuapp.com/api/2108-LSU-RM-WEB-PT";
@@ -6,6 +7,7 @@ const BASE_URL =
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const history = useHistory();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -34,6 +36,7 @@ const Login = () => {
 
     setUsername("");
     setPassword("");
+    history.push("/profile");
   };
   return (
     <div id="login">

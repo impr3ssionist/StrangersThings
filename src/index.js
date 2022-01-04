@@ -52,7 +52,6 @@ const App = () => {
     const posts = await fetchPosts();
     setPosts(posts);
   }, []);
-  console.log("UserData:", userData);
 
   return (
     <>

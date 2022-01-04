@@ -51,7 +51,6 @@ const AccountForm = ({ action, setToken, setUserData }) => {
         ></input>
         <button type="submit">Register</button>
       </form>
-      <Link to="/">Go somewhere</Link>
     </div>
   );
 };

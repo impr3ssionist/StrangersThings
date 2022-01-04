@@ -1,26 +1,23 @@
 // Problems
 
-//still can't sign in?
-//had not defined a token from my returned data and stored it in a variable
+// on the login page, the button says register
 
-// once I login, I still see options to login and register unless I refresh the page
-// I had duplicate login routes and needed to pass token to navbar as a prop
+// after logging in, the user should be redirected to the profile page
 
-// what do I do with return parameters in the users/me endpoint section of the api?
+// when I log out, the header still says my name
 
-Routes via React Router :
+// when the nav is on a smaller window it collapses and bleeds contents
 
-/profile (with messages)
+//all posts bleeds content when shrunk
+
+// on media screen, in the all posts section, the titles of the posts should shrink so that the tell me more button stays skinny
 
 Authenticated Users should be able to:
 
 Edit a post for which they are the author
-Send a message to the author of any post for which they are not the author
-See all messages for any post for which they are the author
+see the item for which messages have been sent
 See all messages they've received in a special view
 
 Authenticated Users should not be able to:
 
 Send a message to themselves
-
-All users should be able to:
