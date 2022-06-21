@@ -1,9 +1,11 @@
+import { useHistory } from "react-router";
+
 export const BASE_URL = "https://strangers-things.herokuapp.com/api/";
 export const COHORT_NAME = "2108-LSU-RM-WEB-PT";
 export const API_URL = BASE_URL + COHORT_NAME;
 
 export const callApi = async ({ url, method, token, body }) => {
-  // console.log("callApi: ", { url, method, token, body });
+  console.log("callApi: ", { url, method, token, body });
   try {
     const options = {
       method: method ? method.toUpperCase() : "GET",
@@ -23,6 +25,6 @@ export const callApi = async ({ url, method, token, body }) => {
     if (data.error) throw data.error;
     return data;
   } catch (error) {
-    console.error("ERROR: ", error);
+    alert(error.message);
   }
 };
