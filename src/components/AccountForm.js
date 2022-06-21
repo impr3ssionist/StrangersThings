@@ -49,7 +49,7 @@ const AccountForm = ({ action, setToken, setUserData }) => {
           value={password}
           onChange={(event) => setPassword(event.target.value)}
         ></input>
-        <button type="submit">Register</button>
+        <button type="submit">{action}</button>
       </form>
     </div>
   );
