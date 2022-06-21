@@ -8,6 +8,7 @@ const Profile = ({ userData, token }) => {
 
   useEffect(() => {
     setPosts(userData.posts);
+    // console.log("USERDATA: ", userData);
   }, [userData]);
 
   const handleSubmit = async (postId) => {
@@ -34,10 +35,6 @@ const Profile = ({ userData, token }) => {
 
     setProfileData(data);
   };
-
-  console.log("DATA", userData);
-  console.log("POSTS", userData.posts);
-  console.log("UserData:", userData);
 
   return (
     <div>

@@ -30,7 +30,7 @@ const AccountForm = ({ action, setToken, setUserData }) => {
       setUsername("");
       setPassword("");
       setToken(token);
-      history.push("/");
+      history.push("/profile");
     }
   };
   return (
