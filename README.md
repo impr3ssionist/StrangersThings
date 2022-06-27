@@ -1,1 +1,1 @@
-
+Stranger's Things is a classified listing service where customers can buy or sell personal items. Our interface provides a smooth and secure way to post your stuff, shop and message sellers. Happy shopping!
