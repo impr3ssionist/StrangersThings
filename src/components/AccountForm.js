@@ -1,20 +1,12 @@
 import React, { useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { callApi } from "../api";
 
-const API_ROOT = `https://strangers-things.herokuapp.com/api/2108-LSU-RM-WEB-PT/users/`;
-const API_REGISTER = `${API_ROOT}register`;
-const API_LOGIN = `${API_ROOT}login`;
-const API_USER = `${API_ROOT}me`;
-
-const AccountForm = ({ action, setToken, setUserData }) => {
+const AccountForm = ({ action, setToken }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const isLogin = action === "login";
   const title = isLogin ? "Login" : "Register";
-  const oppositeTitle = isLogin ? "Register" : "Login";
-  const oppositeAction = isLogin ? "register" : "login";
-  const actionURL = isLogin ? API_LOGIN : API_REGISTER;
   const history = useHistory();
 
   const handleSubmit = async (event) => {
@@ -25,6 +17,7 @@ const AccountForm = ({ action, setToken, setUserData }) => {
       method: "POST",
     });
     const token = data?.data?.token;
+
     if (token) {
       localStorage.setItem("token", token);
       setUsername("");

@@ -24,6 +24,7 @@ const App = () => {
       token,
     });
     return data;
+    console.log("DATA: ", data);
   };
 
   const fetchPosts = async () => {

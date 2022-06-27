@@ -21,7 +21,7 @@ const SinglePost = ({ posts, token }) => {
           },
         },
       });
-      console.log("DONE!");
+      console.log("Message sent successfully.");
     } catch (error) {
       console.error("Error sending a message");
     }

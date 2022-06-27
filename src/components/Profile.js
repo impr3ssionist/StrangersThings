@@ -8,7 +8,6 @@ const Profile = ({ userData, token }) => {
 
   useEffect(() => {
     setPosts(userData.posts);
-    // console.log("USERDATA: ", userData);
   }, [userData]);
 
   const handleSubmit = async (postId) => {
@@ -86,7 +85,3 @@ const Profile = ({ userData, token }) => {
 };
 
 export default Profile;
-
-//messages may need to be converted to a string to parse correctly
-
-//could replace getProfile with a getMessages function

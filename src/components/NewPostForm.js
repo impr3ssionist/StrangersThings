@@ -49,7 +49,7 @@ const NewPostForm = ({ token, setPosts, posts, action }) => {
       //no matter what send users to the /posts page when we are done
       history.push("/posts");
     } catch (error) {
-      console.error("Error adding your post:", error);
+      alert("Error adding your post:", error);
     }
   };
 
@@ -85,7 +85,7 @@ const NewPostForm = ({ token, setPosts, posts, action }) => {
         ></input>
         <input
           type="text"
-          placeholder="Where is the item located?"
+          placeholder=""
           onChange={handlePostFieldChange("location")}
           value={newPost.location}
         ></input>

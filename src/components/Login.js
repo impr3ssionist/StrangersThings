@@ -28,7 +28,7 @@ const Login = () => {
     if (response) {
       const data = await response.json();
       const token = data.data.token;
-      setTok;
+      setToken;
       localStorage.setItem("token", token);
       setUsername("");
       setPassword("");
